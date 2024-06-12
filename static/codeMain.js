@@ -17,10 +17,15 @@ function UnCheckAll(){
 
 
 function GoTo(pageName){
-	let currentLocation = window.location+''
-	let splitted = currentLocation.split('/')
-	currentLocation = currentLocation.replace(splitted[splitted.length-1], pageName)
-	window.location = currentLocation
+	try{
+		let currentLocation = window.location+''
+		let splitted = currentLocation.split('/')
+		currentLocation = currentLocation.replace(splitted[splitted.length-1], pageName)
+		window.location = currentLocation
+	} catch(e) {
+		let currentLocation = 'https://'+window.location.host+'/SAPSite/'
+		window.location = currentLocation+pageName
+	}
 }
 
 

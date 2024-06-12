@@ -17,15 +17,16 @@ function UnCheckAll(){
 
 
 function GoTo(pageName){
-	try{
+	if (window.location.protocol === "https:") {
+		let currentLocation = 'https://'+window.location.host+'/SAPSite/'
+		window.location = currentLocation+pageName
+	} else {
 		let currentLocation = window.location+''
 		let splitted = currentLocation.split('/')
 		currentLocation = currentLocation.replace(splitted[splitted.length-1], pageName)
 		window.location = currentLocation
-	} catch(e) {
-		let currentLocation = 'https://'+window.location.host+'/SAPSite/'
-		window.location = currentLocation+pageName
 	}
+	
 }
 
 

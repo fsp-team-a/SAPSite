@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="easy_search_style.css" />
+	<script src='static/codeMain.js'></script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="rebased.css" />
+    <div class="screen">
+      <div class="div">
+	  
+		<div id="SearchResults">
+			<button id='testPatent' onclick="CreatePatentElement(1)">Создать патент (тест)</button>
+			<button id='testPatent' onclick="CreatePatentElement(5)">Создать патент (тест) x5</button>
+			<button id='AnotherSearch' class='div-wrapper' onclick="SearchAgain()">Вернуться к поиску</button>
+			<div class="box">
+				<div class="LeftOptions">
+					<input class="CheckPat" type="checkbox" onClick = "MarkThisPatent(this)"/>
+					<img class="GoDown" src="img/go_down.png"/>
+				</div>
+				<div class="RightOptions">
+					<span id='Title'> Название патента </span>
+					<div class="ContentLine">
+						<img class="PointImg" src='img/rectangle-39-2.svg'>
+						<span id='CountryIndex'> Это индекс </span>
+						<span id='Grant'> Грант / Не грант </span>
+						<span id='Fam'> Семейство </span>
+						<span id='juris'> Семейные юрисдикции </span>
+					</div>
+					<span id="LegalStatus">Легальный статус: (статус)</span>
+					<div class="ContentLine">
+						<span id='NumberOfInlucded'> № приложения: (номер) </span>
+						<span id='InArchive'> В архиве: (дата) </span>
+						<span id='Fam'> Семейство </span>
+						<span id='juris'> Семейные юрисдикции </span>
+					</div>
+					<span id="Owners">Владельцы: (компания)</span><br><br>
+					<span id="Applicants">Заявители: (компания)</span><br><br>
+					<span id="Creators">Изобретатели: (имя)</span>
+				</div>
+			</div>
+		</div>
+		
+		<div id='SearchBox'>
+			<img class="textbox" src="img/textbox.png" />
+			<div class="textbox-wrapper">
+			  <div class="div-wrapper" onClick="SearchIt()"><div class="text-wrapper">Поиск</div></div>
+			</div>
+			<div class="textbox-2">
+			  <div class="textbox-3"><div class="text-wrapper-2">Очистить</div></div>
+			</div>
+			<div class="textbox-4">
+			  <input class="textbox-5" placeholder="Номер документа"></input>
+			</div>
+			<div class="textbox-6">
+			  <input class="textbox-7" placeholder="Дата от" type="date">
+			</div>
+			<div class="textbox-8">
+			  <input class="textbox-7" placeholder="Дата до" type="date">
+			</div>
+			<div class="text-wrapper-6">Поисковые массивы:</div>
+			<div class="textbox-9">
+			  <input class="textbox-10" placeholder="Автор"></input>
+			</div>
+			<div class="textbox-11">
+			  <input class="textbox-10" placeholder="Патентообладатель"></input>
+			</div>
+			<div class="textbox-12">
+			  <input class="textbox-10" placeholder="Заявитель"></input>
+			</div>
+			<div class="group">
+			  <div class="group-wrapper">
+				<div class="group-2">
+				  <div class="textbox-13">
+					<div class="textbox-14">
+					  <input class="image-3" type="checkbox"> </input>
+					  <div class="text-wrapper-10">Россия и страны СНГ</div>
+					</div>
+				  </div>
+				  <div class="textbox-15">
+					<div class="textbox-16">
+					  <input class="image-3" type="checkbox"> </input>
+					  <div class="text-wrapper-11">Промышленные образцы</div>
+					</div>
+				  </div>
+				  <div class="textbox-17">
+					<div class="textbox-18">
+					  <input class="image-3" type="checkbox"> </input>
+					  <div class="text-wrapper-12">Страны с малым патентным<br />фондом</div>
+					</div>
+				  </div>
+				  <div class="textbox-19">
+					<div class="textbox-14">
+					  <input class="image-3" type="checkbox"> </input>
+					  <div class="text-wrapper-13">Минимум РСТ</div>
+					</div>
+				  </div>
+				  <div class="group-3">
+					<div class="textbox-20">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-14">Россия до 1994</div>
+					  </div>
+					</div>
+					<div class="textbox-22">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-15">Россия с 1994</div>
+					  </div>
+					</div>
+					<div class="textbox-23">
+					  <input class="image-3" type="checkbox"> </input>
+					  <div class="text-wrapper-16">Образцы России</div>
+					</div>
+					<div class="textbox-24">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-17">Документы СНГ</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="group-4">
+					<div class="textbox-20">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-15">ARIPO и OAPI</div>
+					  </div>
+					</div>
+					<div class="textbox-22">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-18">Китай</div>
+					  </div>
+					</div>
+					<div class="textbox-23">
+					  <input class="image-3" type="checkbox"> </input>
+					  <div class="text-wrapper-19">Австралия</div>
+					</div>
+					<div class="textbox-24">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-20">Швейцария</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="group-5">
+					<div class="textbox-20">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-21">Корея</div>
+					  </div>
+					</div>
+					<div class="textbox-22">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-18">Китай</div>
+					  </div>
+					</div>
+					<div class="textbox-24">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-22">Япония</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="group-6">
+					<div class="textbox-20">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-23">США</div>
+					  </div>
+					</div>
+					<div class="textbox-22">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-24">Германия</div>
+					  </div>
+					</div>
+					<div class="textbox-23">
+					  <input class="image-3" type="checkbox"> </input>
+					  <div class="text-wrapper-19">Япония</div>
+					</div>
+					<div class="textbox-24">
+					  <div class="textbox-21">
+						<input class="image-3" type="checkbox"> </input>
+						<div class="text-wrapper-25">Франция</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  <img class="image-4" src="img/2.png" />
+			  <img class="image-5" src="img/2.png" />
+			  <img class="image-6" src="img/2.png" />
+			</div>
+		</div>
+		<div class="view">
+			<div class="overlap-group">
+				<div class="text-wrapper-8">Простой поиск</div>
+				<div class="text-wrapper-9" onClick="GoTo('extended_search.html')">Расширенный поиск</div>
+				<img class="line" src="img/line-1.svg" />
+			</div>
+		</div>
+			
+        <div class="menu-bar">
+          <div class="overlap-wrapper">
+            <div class="overlap">
+              <div class="overlap-2">
+                <div class="view-2">
+                  <div class="overlap-group-2 tabActive">
+                    <div class="rectangle"></div>
+                    <div class="icon"><div class="text-wrapper-26">Поиск</div></div>
+                  </div>
+                  <div class="overlap-3">
+					 <div class="overlap-group-2" onClick="MyPatents()">
+					    <div class="rectangle"></div>
+						<div class="icon"><div class="text-wrapper-26">Мои патенты</div></div>
+					 </div>
+					 <div class="overlap-group-last">
+					    <div class="rectangle"></div>
+					    <img class="analytics" src='img/mdi-form.svg'/>
+						<div class="icon"><div class="text-wrapper-26">Аналитика</div></div>
+					 </div>
+                    <img class="icon-3" src="img/icon.png" />
+                  </div>
+                </div>
+                <img class="vector" src="img/vector.svg" />
+              </div>
+              <div class="div-2">
+                <div class="overlap-4">	
+                  <div class="menu-bar-2">
+                    <img class="img-2" src="img/image_logout.png" />
+                    <div class="image-wrapper" onClick='ToAcc()' ><img class="image-7" src="img/2x.png" /></div>
+                  </div>
+                  <div class="div-3">
+                    <div class="text-wrapper-28">Степанов Олег<br />Александрович</div>
+                    <div class="overlap-group-wrapper">
+                      <div class="overlap-group-3">
+                        <div class="ellipse"></div>
+                        <img class="ellipse-2" src="img/ellipse-85.png" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="view-3"><div class="text-wrapper-29">ID: 0000</div></div>
+              </div>
+              <div class="overlap-5">
+                <p class="p">
+                  <span class="span">RU</span>
+                  <span class="text-wrapper-30"></span>
+                  <span class="text-wrapper-31">broker</span>
+                </p>
+                <div class="group-7">
+                  <div class="overlap-6"><div class="text-wrapper-32">лого</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <script src='static/patents_list.js'></script>
+  </body>
+</html>
+
+
+
+
+
+
+

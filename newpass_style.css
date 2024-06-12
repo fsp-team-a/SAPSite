@@ -1,0 +1,497 @@
+body{
+	background: #ebebeb
+}
+
+input {outline: none}
+
+.screen {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .overlap-wrapper {
+  width: 1920px;
+  height: 670px;
+}
+
+.screen .overlap {
+  position: relative;
+  height: 1040px;
+  top: -370px;
+}
+
+.screen .overlap-group-wrapper {
+  position: absolute;
+  width: 1920px;
+  height: 1040px;
+  top: 0;
+  left: 0;
+}
+
+.screen .overlap-group {
+  position: relative;
+  height: 670px;
+  top: 370px;
+  background-color: #ebebeb;
+}
+
+.screen .img {
+  position: absolute;
+  width: 1920px;
+  height: 400px;
+  top: 270px;
+  left: 0;
+}
+
+.screen .ellipse {
+  height: 494px;
+  position: absolute;
+  width: 1256px;
+  top: 0;
+  left: 340px;
+}
+
+.screen .ellipse-2 {
+  height: 464px;
+  position: absolute;
+  width: 1256px;
+  top: 0;
+  left: 340px;
+}
+
+.screen .view {
+  position: absolute;
+  width: 1920px;
+  height: 70px;
+  top: 370px;
+  left: 0;
+}
+
+.screen .RKO-service {
+  position: absolute;
+  width: 37px;
+  height: 57px;
+  top: 5px;
+  left: 371px;
+}
+
+.screen .text-wrapper {
+  position: absolute;
+  height: 47px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #34486c;
+  font-size: 54.5px;
+  letter-spacing: 21.79px;
+  line-height: 47.4px;
+  white-space: nowrap;
+}
+
+.screen .rectangle {
+  position: absolute;
+  width: 35px;
+  height: 6px;
+  top: 51px;
+  left: 0;
+}
+
+.screen .to-come-in {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 23px;
+  left: 1460px;
+}
+
+.screen .div {
+  position: relative;
+  width: fit-content;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  color: #34486c;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18.2px;
+  white-space: nowrap;
+}
+
+.screen .maki-entrance {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.screen .navbar {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 50px;
+  position: absolute;
+  top: 26px;
+  left: 665px;
+}
+
+.screen .text-wrapper-2 {
+  color: #3200ff;
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18.2px;
+  white-space: nowrap;
+}
+
+.screen .text-wrapper-3 {
+  color: #34486c;
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18.2px;
+  white-space: nowrap;
+}
+
+.screen .group {
+  position: absolute;
+  width: 1180px;
+  height: 426px;
+  top: 484px;
+  left: 370px;
+}
+
+.screen .overlap-2 {
+  position: relative;
+  height: 426px;
+}
+
+.screen .header-text-buttom {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.screen .text-headder {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.screen .p {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 700;
+  color: #34486c;
+  font-size: 42px;
+  letter-spacing: 0;
+  line-height: 54.6px;
+}
+
+.screen .text-wrapper-4 {
+  position: relative;
+  width: 561px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  color: #34486c;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.screen .buttom-class {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 60px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.screen .div-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.screen .teenyicons-documents {
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+
+.screen .text-buttom {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.screen .icon-look {
+  position: relative;
+  width: 27px;
+  height: 30px;
+  margin-left: -1px;
+}
+
+.screen .buttom-false {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px 40px;
+  position: relative;
+  flex: 0 0 auto;
+  margin-bottom: -10px;
+  margin-left: -10px;
+  border-radius: 47px;
+  border: 10px solid;
+  border-color: #bdc0e894;
+  box-shadow: inset 0px 0px 17px #0000001a, inset 0px 0px 34px #ffffffe3;
+  background: linear-gradient(180deg, rgb(71.19, 89.57, 255) 0%, rgba(110, 113, 223, 0.99) 100%);
+}
+
+.screen .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 600;
+  color: #f4f4f4;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.screen .macbook-pro {
+  position: absolute;
+  width: 619px;
+  height: 426px;
+  top: 0;
+  left: 561px;
+}
+
+.screen .rectangle-2 {
+  position: absolute;
+  width: 108px;
+  height: 252px;
+  top: 453px;
+  left: 1812px;
+}
+
+.screen .frame {
+  position: absolute;
+  width: 36px;
+  height: 140px;
+  top: 499px;
+  left: 1868px;
+}
+
+.screen .rectangle-3 {
+  position: absolute;
+  width: 1920px;
+  height: 670px;
+  top: 370px;
+  left: 0;
+  background-color: #eaeaea1a;
+  backdrop-filter: blur(10px) brightness(100%);
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+}
+
+.screen .div-wrapper {
+  position: absolute;
+  width: 1180px;
+  height: 670px;
+  top: 370px;
+  left: 370px;
+}
+
+.screen .overlap-3 {
+  position: relative;
+  width: 1244px;
+  height: 670px;
+  left: -32px;
+}
+
+.screen .view-2 {
+  position: absolute;
+  width: 470px;
+  height: 367px;
+  top: 189px;
+  left: 402px;
+}
+
+.screen .group-2 {
+  position: absolute;
+  width: 440px;
+  height: 283px;
+  top: 84px;
+  left: 0;
+}
+
+.screen .group-3 {
+  position: absolute;
+  width: 440px;
+  height: 136px;
+  top: 0;
+  left: 0;
+}
+
+.screen .textbox {
+  top: 78px;
+  position: absolute;
+  width: 442px;
+  height: 58px;
+  left: 0;
+}
+
+.screen .textbox-2 {
+  display: flex;
+  width: 442px;
+  height: 40px;
+  align-items: center;
+  gap: 223px;
+  padding: 5px 20px;
+  position: absolute;
+  top: 19px;
+  left: -1px;
+  background-color: #f0f4ff;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #ffffff;
+  box-shadow: 0px 5px 20px #0000000d;
+}
+
+.screen .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 400;
+  color: #34486c80;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18.2px;
+  white-space: nowrap;
+}
+
+.screen .text-wrapper-7 {
+  position: absolute;
+  height: 16px;
+  top: 0;
+  left: 18px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  color: #34486c;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15.6px;
+  white-space: nowrap;
+}
+
+.screen .textbox-3 {
+  top: 0;
+  position: absolute;
+  width: 442px;
+  height: 58px;
+  left: 0;
+}
+
+.screen .group-4 {
+  position: absolute;
+  width: 433px;
+  height: 38px;
+  top: 245px;
+  left: 9px;
+}
+
+.screen .text-wrapper-8 {
+  position: absolute;
+  height: 21px;
+  cursor: pointer;
+  top: 9px;
+  left: 0;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  color: #34486c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20.8px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.screen .view-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 307px;
+  border-radius: 47px;
+  background: linear-gradient(180deg, rgb(71.19, 89.57, 255) 0%, rgba(110, 113, 223, 0.99) 100%);
+}
+
+.screen .text-wrapper-9 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18.2px;
+  white-space: nowrap;
+}
+
+.screen .div-3 {
+  position: absolute;
+  height: 31px;
+  top: 0;
+  left: 16px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 600;
+  color: transparent;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 31.2px;
+  white-space: nowrap;
+}
+
+.screen .span {
+  color: #3d4f6f;
+}
+
+.screen .text-wrapper-10 {
+  color: #5364fd;
+}
+
+.screen .element {
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  top: 112px;
+  left: 605px;
+  object-fit: cover;
+}

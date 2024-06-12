@@ -1,0 +1,10 @@
+.screen .menu-bar, .screen .overlap, .screen .overlap-wrapper, .screen .div, .screen {
+	height: 100%
+}
+
+body {overflow-x: visible}
+input.textbox-10, input.textbox-5, input.textbox-7, input.textbox-9 {outline: none}
+input.textbox-7, input.textbox-9 {padding: 0 !important; padding-left: 5px !important; }
+.screen .image-wrapper, .div-wrapper .img-2 {cursor: pointer; z-index: 2}
+.div-wrapper .img-2, .screen .img-2 {z-index: 2; cursor: pointer}
+.screen .overlap-3 {left: 0px}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="extended_search_style.css" />
+	<script src='static/codeMain.js'></script>
+	<script src='static/patents_list.js'></script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="rebased.css" />
+    <div class="div-wrapper">
+      <div class="div">
+	  
+		<div id="SearchResults">
+			<button id='testPatent' onclick="CreatePatentElement(1)">Создать патент (тест)</button>
+			<button id='testPatent' onclick="CreatePatentElement(5)">Создать патент (тест) x5</button>
+			<button id='AnotherSearch' class='overlap-2' onclick="SearchAgain()">Вернуться к поиску</button>
+			<div class="box">
+				<div class="LeftOptions">
+					<input class="CheckPat" type="checkbox" onClick = "MarkThisPatent(this)"/>
+					<img class="GoDown" src="img/go_down.png"/>
+				</div>
+				<div class="RightOptions">
+					<span id='Title'> Название патента </span>
+					<div class="ContentLine">
+						<img class="PointImg" src='img/rectangle-39-2.svg'>
+						<span id='CountryIndex'> Это индекс </span>
+						<span id='Grant'> Грант / Не грант </span>
+						<span id='Fam'> Семейство </span>
+						<span id='juris'> Семейные юрисдикции </span>
+					</div>
+					<span id="LegalStatus">Легальный статус: (статус)</span>
+					<div class="ContentLine">
+						<span id='NumberOfInlucded'> № приложения: (номер) </span>
+						<span id='InArchive'> В архиве: (дата) </span>
+						<span id='Fam'> Семейство </span>
+						<span id='juris'> Семейные юрисдикции </span>
+					</div>
+					<span id="Owners">Владельцы: (компания)</span><br><br>
+					<span id="Applicants">Заявители: (компания)</span><br><br>
+					<span id="Creators">Изобретатели: (имя)</span>
+				</div>
+			</div>
+		</div>
+	
+	  
+	    <div id="SearchBox">
+			<div class="view">
+			  <div class="overlap-group"><div class="text-wrapper">?</div></div>
+			</div>
+			<div class="text-wrapper-2">Поисковые массивы:</div>
+			<div class="overlap-wrapper">
+			  <textarea class="overlap" placeholder="Что вы ищете?"></textarea>
+			</div>
+			<div class="overlap-group-wrapper" onClick="SearchIt()">
+			  <button class="overlap-2">Поиск</button>
+			</div>
+			<div class="view-2">
+			  <input class="overlap-3" placeholder="Заявитель"/>
+			</div>
+			<div class="view-3">
+			  <input class="overlap-3" placeholder="Страна приоритета"/>
+			</div>
+			<div class="view-4">
+			  <input class="overlap-3" placeholder="Дата приоритета"/>
+			</div>
+			<div class="view-5">
+			  <input class="overlap-3" placeholder="Страна публикации"/>
+			</div>
+			<div class="view-6">
+			  <input class="overlap-3" placeholder="Название"/>
+			</div>
+			<div class="view-7">
+			  <input class="overlap-3" placeholder="Патентообладатель"/>
+			</div>
+			<div class="view-8">
+			  <input class="overlap-4" placeholder="МКПО"/>
+			</div>
+			<div class="view-9">
+			  <input class="overlap-3" placeholder="Описание"/>
+			</div>
+			<div class="view-10">
+			  <input class="overlap-4" placeholder="МПК"/>
+			</div>
+			<div class="view-11">
+			  <input class="overlap-5" placeholder="Автор"/>
+			</div>
+			<div class="view-12">
+			  <input class="overlap-3" placeholder="Именные поля"/>
+			</div>
+			<div class="view-13">
+			  <input class="overlap-6" placeholder="Номер приорететной заявки"/>
+			</div>
+			<div class="view-14">
+			  <input class="overlap-3" placeholder="Код вида документа"/>
+			</div>
+			<div class="view-15">
+			  <input class="overlap-7" placeholder = "Основные индексы МПК"/>
+			</div>
+			<div class="CPC">
+			  <input class="overlap-7" placeholder="Основные индексы CPC(СПК)"/>
+			</div>
+			<div class="view-16">
+			  <input class="overlap-3" placeholder="Дата публикации"/>
+			</div>
+			<div class="view-17">
+			  <input class="overlap-3" placeholder="Весь текст"/>
+			</div>
+			<div class="view-18">
+			  <input class="overlap-3" placeholder="Реферат"/>
+			</div>
+			<div class="view-19">
+			  <input class="overlap-3" placeholder="Формула"/>
+			</div>
+			<div class="view-20">
+			  <input class="overlap-6" placeholder="Упорядоченный набор индексов"/>
+			</div>
+			<div class="view-21">
+			  <input class="overlap-3" placeholder="Номер документа"/>
+			</div>
+			<div class="view-22">
+			  <input class="overlap-3" placeholder="Номер заявки"/>
+			</div>
+			<div class="view-23">
+			  <input class="overlap-3" placeholder="Дата подачи заявки"/>
+			</div>
+			<div class="CPC-2">
+			  <input class="overlap-3" placeholder="Индексы CPC"/>
+			</div>
+			<div class="view-24">
+			  <div class="view-25">
+				<div class="overlap-group-2">
+				  <div class="text-wrapper-25">Промышленные образцы</div>
+				  <input type="checkbox" class="img" />
+				</div>
+			  </div>
+			  <div class="view-26">
+				<div class="overlap-group-2">
+				  <p class="p">Страны с малым <br />патентным фондом</p>
+				  <input type="checkbox" class="img" />
+				</div>
+			  </div>
+			  <div class="view-27">
+				<div class="overlap-group-2">
+				  <div class="text-wrapper-25">Минимум РСТ</div>
+				  <input type="checkbox" class="img" />
+				</div>
+			  </div>
+			  <div class="view-28">
+				<div class="overlap-group-2">
+				  <div class="text-wrapper-27">Россия и страны СНГ</div>
+				  <input type="checkbox" class="img" />
+				</div>
+			  </div>
+			  <img class="image-3" src="img/3-2x.png" />
+			  <img class="image-4" src="img/3-2x.png" />
+			  <img class="image-5" src="img/3-2x.png" />
+			  <img class="image-6" src="img/3-2x.png" />
+			  <div class="view-29">
+				<div class="overlap-8" onClick="CheckAll()"><div class="text-wrapper-28">Выделить все</div></div>
+			  </div>
+			  <div class="view-30">
+				<div class="overlap-8" onClick="UnCheckAll()"><div class="text-wrapper-29">Снять выделение</div></div>
+			  </div>
+			</div>
+			<div class="overlap-9">
+			  <div class="text-wrapper-30">Структура</div>
+			  <div class="view-31">
+				<div class="text-wrapper-31">Классификаторы:</div>
+				<div class="view-32">
+				  <select class="overlap-group-2" value="МПК">
+					<option>МПК</option>
+				  </select>
+				</div>
+				<div class="text-wrapper-33">Версия классификатора (версия)</div>
+				<div class="group">
+				  <img class="line" src="img/line-7.svg" />
+				  <div class="view-33">
+					<div class="overlap-group-3">
+					  <div class="textbox-wrapper">
+						<div class="textbox-3">
+						  <img class="vector" src="img/vector.svg" />
+						  <input class="text-wrapper-34" placeholder="Классификационный индекс"/>
+						</div>
+					  </div>
+					  <img class="image-7" src="img/11.png" />
+					  <img class="image-8" src="img/11.png" />
+					  <img class="image-9" src="img/11.png" />
+					  <img class="image-10" src="img/11.png" />
+					  <img class="image-11" src="img/11.png" />
+					  <img class="image-12" src="img/11.png" />
+					  <img class="image-13" src="img/11.png" />
+					  <img class="image-14" src="img/11.png" />
+					  <div class="view-34">
+						<div class="text-wrapper-35">A</div>
+						<div class="text-wrapper-36">B</div>
+						<div class="text-wrapper-37">C</div>
+						<div class="text-wrapper-38">D</div>
+						<div class="text-wrapper-39">E</div>
+						<div class="text-wrapper-40">F</div>
+						<div class="text-wrapper-41">G</div>
+						<div class="text-wrapper-42">H</div>
+					  </div>
+					  <p class="text-wrapper-43">Раздел а - удовлетворение жизненных потребностей человека</p>
+					  <p class="text-wrapper-44">Раздел c - химия; металургия</p>
+					  <p class="text-wrapper-45">Раздел b - различные технологические процессы: транспортирование</p>
+					  <p class="text-wrapper-46">Раздел d - текстиль; бумага</p>
+					  <p class="text-wrapper-47">Раздел e - строительство и горное дела</p>
+					  <p class="text-wrapper-48">
+						Раздел f - машиностроение; освещение; оружие и боеприпасы; взрывные работы
+					  </p>
+					  <div class="text-wrapper-49">Раздел g - физика</div>
+					  <div class="text-wrapper-50">Раздел h - электричество</div>
+					</div>
+				  </div>
+				</div>
+				<div class="text-wrapper-51">Поиск по терминам</div>
+			  </div>
+			</div>
+		  </div>
+		<div class="menu-bar">
+			  <div class="group-2">
+				<div class="overlap-10">
+				  <div class="overlap-11">
+					<div class="view-35">
+					  <div class="overlap-group-4 Active">
+						<div class="rectangle Active"></div>
+						<div class="icon"><div class="text-wrapper-52">Поиск</div></div>
+					  </div>
+					  <div class="overlap-12">
+						  <div class="overlap-group-4" onClick="MyPatents()">
+							<div class="rectangle"></div>
+						    <img class="mdi-form" src="img/icon.png" />
+							<div class="icon"><div class="text-wrapper-52">Мои патенты</div></div>
+						  </div>
+						 <div class="overlap-group-last">
+							<div class="rectangle"></div>
+							<img class="analytics" src='img/mdi-form.svg'/>
+							<div class="icon"><div class="text-wrapper-26">Аналитика</div></div>
+						 </div>
+					  </div>
+					</div>
+					<img class="vector-2" src="img/vector-1.svg" />
+				  </div>
+				  <div class="div-2">
+					<div class="overlap-13">
+					  <div class="menu-bar-2">
+						<img class="img-2" src="img/image_logout.png" />
+						<div class="image-wrapper" onClick="ToAcc()"><img class="image-15" src="img/2x.png" /></div>
+					  </div>
+					  <div class="div-3">
+						<div class="text-wrapper-54">Степанов Олег<br />Александрович</div>
+						<div class="view-36">
+						  <div class="overlap-group-5">
+							<div class="ellipse"></div>
+							<img class="ellipse-2" src="img/ellipse-85.png" />
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<div class="view-37"><div class="text-wrapper-55">ID: 0000</div></div>
+				  </div>
+				  <div class="overlap-14">
+					<p class="div-4">
+					  <span class="span">RU</span>
+					  <span class="text-wrapper-56"> </span>
+					  <span class="text-wrapper-57">broker</span>
+					</p>
+					<div class="group-3">
+					  <div class="overlap-15"><div class="text-wrapper-58">лого</div></div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		<div class="view-38">
+			<div class="overlap-16">
+			<div class="text-wrapper-59" onClick="GoTo('easy_search.html')">Простой поиск</div>
+			<div class="text-wrapper-60">Расширенный поиск</div>
+			<img class="line-2" src="img/line-1.svg" />
+			</div>
+		</div>
+      </div>
+    </div>
+  </body>
+</html>

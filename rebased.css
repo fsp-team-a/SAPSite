@@ -8,3 +8,5 @@ input.textbox-7, input.textbox-9 {padding: 0 !important; padding-left: 5px !impo
 .screen .image-wrapper, .div-wrapper .img-2 {cursor: pointer; z-index: 2}
 .div-wrapper .img-2, .screen .img-2 {z-index: 2; cursor: pointer}
 .screen .overlap-3 {left: 0px}
+.swal2-container {font-family: 'Montserrat'}
+body.swal2-height-auto {height: 100% !important}
